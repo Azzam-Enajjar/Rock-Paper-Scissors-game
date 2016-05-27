@@ -1,0 +1,52 @@
+<!--
+  Copyright (c) 2016 Azzam Enajjar
+
+  This game is licensed under the terms of the MIT license. Please see    
+  LICENSE.md for full license terms.
+  -->
+  
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rock Paper Scissors game</title>
+</head>
+<body>
+<script>
+	var userChoice = window.prompt("What do you like to choose: Rock, Paper, or Scissors?");
+	var computerChoice = Math.random();
+	
+	if (computerChoice<0.34)
+		computerChoice = "rock";
+	else if(computerChoice <= 0.67)
+		computerChoice = "paper";
+	else
+		computerChoice = "scissors";
+	
+	function compare(choice1, choice2)
+	{
+		if(choice1 == choice2)
+			return "The result is a tie";
+		else if(choice1 == "rock")
+			if(choice2 == "paper")
+				return "Computer wins!";
+			else return "You win!";
+		else if(choice1 == "paper")
+			if(choice2 == "rock")
+				return "You win!";
+			else return "Computer wins!";
+		else if (choice1 == "scissors")
+			if(choice2 == "rock")
+				return "Computer wins!";
+			else return "You win!";				
+	}	
+	
+	document.write("<br/> <br/> Computer choice:" + computerChoice);
+	document.write("<br/> <br/> Your choice:" + userChoice);
+	document.write("<br/> <br/> "+compare(userChoice, computerChoice));
+	
+
+
+</script>
+</body>
+</html>
