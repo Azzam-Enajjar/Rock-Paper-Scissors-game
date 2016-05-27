@@ -13,40 +13,52 @@
 </head>
 <body>
 <script>
-	var userChoice = window.prompt("What do you like to choose: Rock, Paper, or Scissors?");
+	var userChoice = window.prompt("What do you like to choose: rock, paper, or scissors? Press (r) for rock, (p) for paper, or (s) for scissors");
 	var computerChoice = Math.random();
 	
 	if (computerChoice<0.34)
-		computerChoice = "rock";
+		computerChoice = "r";
 	else if(computerChoice <= 0.67)
-		computerChoice = "paper";
+		computerChoice = "p";
 	else
-		computerChoice = "scissors";
+		computerChoice = "s";
 	
 	function compare(choice1, choice2)
 	{
 		if(choice1 == choice2)
 			return "The result is a tie";
-		else if(choice1 == "rock")
-			if(choice2 == "paper")
+		else if(choice1 == "r")
+			if(choice2 == "p")
 				return "Computer wins!";
 			else return "You win!";
-		else if(choice1 == "paper")
-			if(choice2 == "rock")
+		else if(choice1 == "p")
+			if(choice2 == "r")
 				return "You win!";
 			else return "Computer wins!";
-		else if (choice1 == "scissors")
-			if(choice2 == "rock")
+		else if (choice1 == "s")
+			if(choice2 == "r")
 				return "Computer wins!";
 			else return "You win!";				
 	}	
 	
-	document.write("<br/> <br/> Computer choice:" + computerChoice);
-	document.write("<br/> <br/> Your choice:" + userChoice);
+	if(computerChoice == "r")
+		cChoice = "rock";
+	else if(computerChoice == "p")
+			cChoice = "paper";
+		else 
+			cChoice = "scissors";
+
+	if(userChoice == "r")
+		uChoice = "rock";
+	else if(userChoice == "p")
+			uChoice = "paper";
+		else 
+			uChoice = "scissors";
+		
+	document.write("<br/> Computer choice:" + cChoice);
+	document.write("<br/> <br/> Your choice:" + uChoice);
 	document.write("<br/> <br/> "+compare(userChoice, computerChoice));
 	
-
-
 </script>
 </body>
 </html>
